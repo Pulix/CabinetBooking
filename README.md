@@ -3,7 +3,7 @@ New ASP net project
 
 
 Cabinet Booking
-
+### Solar System Exploration, 1950s – 1960s
 -[ ] As a user I want to be able to log into the application with a username and password (a user should authenticate with
 CNP and password, a doctor should authenticate with username and pin – 4 digits)
 ◻ As a user I want to be able to see all doctors and their specialities
