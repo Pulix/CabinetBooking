@@ -15,3 +15,14 @@ appointment (an appointment cannot be cancelled if there is less than one day �
 ◻ As an administrator I want to be able to see, modify and delete all the appointments (one cannot delete current and
 future appointments)
 ◻ As an administrator I want to be able to see statistic reports about appointments made
+
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
