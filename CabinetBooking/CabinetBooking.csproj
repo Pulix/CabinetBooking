@@ -67,12 +67,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.Master" />
     <Content Include="CabinetBooking.dbml">
+      <SubType>Designer</SubType>
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>CabinetBooking.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </Content>
+    <Content Include="Default.Master" />
     <None Include="CabinetBooking.dbml.layout">
       <DependentUpon>CabinetBooking.dbml</DependentUpon>
     </None>
@@ -95,9 +95,9 @@
       <DependentUpon>CabinetBooking.dbml</DependentUpon>
     </Compile>
     <Compile Include="CabinetBooking.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CabinetBooking.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
