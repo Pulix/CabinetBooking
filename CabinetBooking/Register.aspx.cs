@@ -25,7 +25,7 @@ namespace CabinetBooking
 
 			if (password == "")
 			{
-				password = "Password NO GOOD !";
+				password = "Password nu bun !";
 			}
 
 			Label1.Text = firstName + " " + lastName + " " + username + " " + password;
