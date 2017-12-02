@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="CabinetBooking.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<title></title>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div>
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+				<%--DO NOT Insert Content Here--%>
+
+			</asp:ContentPlaceHolder>
+		</div>
+	</form>
+
+	<footer>
+		<div id="footer">
+			<div class="container">
+				<h1 class="title">Find Us</h1>
+				<div class="footermap">
+					<p>
+						<strong>Address: </strong>Lahovarii 111<br />
+
+						<strong>Phone: </strong>+ 40 712 346 678<br />
+
+						<strong>Email: </strong>---<br />
+					</p>
+					<p>&copy; 2017 - ---</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+</html>
