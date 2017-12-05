@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<div class="login-page">
 		<div class="form">
-
 			<form class="login-form">
 				<input type="text" placeholder="username" />
 				<input type="password" placeholder="password" />
