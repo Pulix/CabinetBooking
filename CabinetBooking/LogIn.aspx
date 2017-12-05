@@ -5,10 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<div class="login-page">
 		<div class="form">
-			<form class="login-form">
-				<input type="text" placeholder="username" />
-				<input type="password" placeholder="password" />
-				<button>login</button>
+			<form class="login-form">&nbsp;
+				<input type="text" placeholder="Username" id="txtUsername" runat="server" />
+				<input type="password" placeholder="Password" id="txtPassword" runat="server" />
+				<asp:Button ID="bntLogIn" runat="server" Text="Log In" OnClick="bntLogIn_Click" />
 				<p class="message">Not registered? <a href="#">Create an account</a></p>
 			</form>
 		</div>

@@ -13,5 +13,10 @@ namespace CabinetBooking
 		{
 
 		}
+
+		protected void bntLogIn_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
