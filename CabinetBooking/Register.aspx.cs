@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CabinetBooking.Helpers;
 
 namespace CabinetBooking
 {
@@ -38,7 +39,6 @@ namespace CabinetBooking
 			newUser.Type = 3;
 			_dc.Users.InsertOnSubmit(newUser);
 			_dc.SubmitChanges();
-
 		}
 
 		private string validateUsername(string userName)
