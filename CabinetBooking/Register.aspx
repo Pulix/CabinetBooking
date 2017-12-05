@@ -11,7 +11,7 @@
 		}
 	</style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<br />
 	<br />
 	&nbsp;&nbsp;&nbsp;
@@ -39,14 +39,8 @@
 	<br />
 	<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 	<br />
-	&nbsp;<asp:Button runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" Text="Submit" />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
+	&nbsp;<asp:Button runat="server" ID="btnSubmit" CssClass="btn btn-primary" OnClick="btnSubmit_Click" Text="Submit" />
+
 	Already registered? <a href="#">Sign In</a><p class="message">&nbsp;</p>
 	<p class="message">&nbsp;</p>
 	<p class="message">&nbsp;</p>

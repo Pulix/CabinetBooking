@@ -5,38 +5,31 @@
 <html>
 <head runat="server">
 	<title></title>
+	<link href="Resources/AdminLTE/css/AdminLTE.min.css" rel="stylesheet" />
+	<link href="Resources/AdminLTE/css/skins/_all-skins.min.css" rel="stylesheet" />
+	<link href="Resources/Bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="Resources/Custom%20CSS/Custom.css" rel="stylesheet" />
 	<asp:ContentPlaceHolder ID="head" runat="server">
 	</asp:ContentPlaceHolder>
 </head>
-<body>
+<body class="skin-blue layout-boxed">
+
+
+
 	<form id="form1" runat="server">
-		<div>
-			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+		<div class="wrapper">
+			<asp:ContentPlaceHolder ID="MainContent" runat="server">
 
 				<%--DO NOT Insert Content Here--%>
-
 			</asp:ContentPlaceHolder>
 		</div>
+
+		
 	</form>
-
-	<footer>
-		<div id="footer">
+	<footer class="footer">
 			<div class="container">
-				<h1 class="title">Find Us</h1>
-				<div class="footermap">
-					<p>
-						<strong>Address: </strong>Lahovarii 111<br />
-
-						<strong>Phone: </strong>+ 40 712 346 678<br />
-
-						<strong>Email: </strong>---<br />
-					</p>
-					<p>&copy; 2017 - ---</p>
-				</div>
+				<span class="text-muted"><p>&copy; 2017 - The Hawks</p></span>
 			</div>
-		</div>
-	</footer>
-
-
+		</footer>
 </body>
 </html>
