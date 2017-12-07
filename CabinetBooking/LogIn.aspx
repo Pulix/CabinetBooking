@@ -8,7 +8,8 @@
 			<form class="login-form">&nbsp;
 				<input type="text" placeholder="Username" id="txtUsername" runat="server" />
 				<input type="password" placeholder="Password" id="txtPassword" runat="server" />
-				<asp:Button ID="bntLogIn" runat="server" Text="Log In" OnClick="bntLogIn_Click" />
+				<asp:Button ID="btnLogIn" runat="server" Text="Log In" OnClick="bntLogIn_Click" Width="57px" />
+				<asp:Label ID="lblMassage" runat="server" Text=""></asp:Label>
 				<p class="message">Not registered? <a href="#">Create an account</a></p>
 			</form>
 		</div>

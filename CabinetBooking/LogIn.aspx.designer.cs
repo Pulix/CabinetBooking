@@ -31,12 +31,21 @@ namespace CabinetBooking {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPassword;
         
         /// <summary>
-        /// bntLogIn control.
+        /// btnLogIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bntLogIn;
+        protected global::System.Web.UI.WebControls.Button btnLogIn;
+        
+        /// <summary>
+        /// lblMassage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMassage;
     }
 }
