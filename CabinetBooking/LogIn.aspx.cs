@@ -17,6 +17,7 @@ namespace CabinetBooking
 			txtPassword.Visible = true;
 			txtUsername.Visible = true;
 			btnLogIn.Visible = true;
+			btnLogOut.Visible= false;
 			lblMassage.Visible = false;
 		}
 
@@ -28,6 +29,7 @@ namespace CabinetBooking
 				txtPassword.Visible = false;
 				txtUsername.Visible = false;
 				btnLogIn.Visible = false;
+				btnLogOut.Visible = true;
 				lblMassage.Visible = true;
 				lblMassage.ForeColor = Color.Black;
 				lblMassage.Text = user.Username;
@@ -37,10 +39,21 @@ namespace CabinetBooking
 				txtPassword.Visible = true;
 				txtUsername.Visible = true;
 				btnLogIn.Visible = true;
+				btnLogOut.Visible = false;
 				lblMassage.Visible = true;
 				lblMassage.ForeColor = Color.Red;
 				lblMassage.Text = " Worng username or password";
 			}
+		}
+
+		protected void btnLogOut_Click(object sender, EventArgs e)
+		{
+			txtPassword.Visible = true;
+			txtUsername.Visible = true;
+			btnLogIn.Visible = true;
+			btnLogOut.Visible = false;
+			lblMassage.Visible = false;
+			txtUsername.Value = "";
 		}
 	}
 }
