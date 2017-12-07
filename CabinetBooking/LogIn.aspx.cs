@@ -40,7 +40,6 @@ namespace CabinetBooking
 				lblMassage.Visible = true;
 				lblMassage.ForeColor = Color.Red;
 				lblMassage.Text = " Worng username or password";
-
 			}
 		}
 	}
