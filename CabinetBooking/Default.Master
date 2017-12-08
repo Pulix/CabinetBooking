@@ -50,12 +50,15 @@
     <li><a href="#">Specialities</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a href="#" class="btn-link" class="btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>
+<%--    <li><a href="#" class="btn-link" class="btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>--%>
+    <li><a href="LogIn.aspx"> Log In</a></li>
     </ul>
     </div>
     </div>   
     </nav>
-		<!-- Modal -->
+
+
+		<%--<!-- Modal -->
 		<div id="myModal" class="modal fade in" role="dialog">
 			<div class="modal-dialog">
 				<!-- Modal Content -->
@@ -68,24 +71,27 @@
 					<div class="modal-body">
 						<div role="form">
 							<div class="form-group">
-								<asp:Label ID="Label1" runat="server" Text="UserName"></asp:Label>
+								<asp:Label ID="lblUserName" runat="server" Text="UserName"></asp:Label>
 								<asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
 							</div>
 							<div class="form-group">
-								<asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+								<asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
 								<asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
 							</div>
 							<hr class="divider">
 							<div class="form-group">
 								<div class="row">
 									<div class="col-sm-6">
-										<asp:CheckBox ID="chkRemberme" runat="server" Text="Remember Me" CssClass="checkbox-inline" />
+                                        <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+										<asp:CheckBox ID="chkRemberMe" runat="server" Text="Remember Me" CssClass="checkbox-inline" />
 										|
-                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="text-primary">Forgot Password ?</asp:LinkButton>
+                                    <asp:LinkButton ID="ForgotPassButton" runat="server" CssClass="text-primary">Forgot Password ?</asp:LinkButton>
+                                        |
+                                    <asp:LinkButton ID="RegisterButton" runat="server" CssClass="text-primary">Register</asp:LinkButton>
 									</div>
 									<div class="col-sm-6">
 										<span class="pull-right">
-											<asp:Button ID="btnSumbit" CssClass="btn btn-success" runat="server" Text="Submit" /></span>
+											<asp:Button ID="btnLogIn" CssClass="btn btn-success" runat="server" Text="Log In" /></span>
 									</div>
 								</div>
 							</div>
@@ -93,7 +99,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>--%>
 
 		<div>
 			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

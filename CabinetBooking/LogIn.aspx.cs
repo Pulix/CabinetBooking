@@ -18,10 +18,10 @@ namespace CabinetBooking
 			txtUsername.Visible = true;
 			btnLogIn.Visible = true;
 			btnLogOut.Visible= false;
-			lblMassage.Visible = false;
+			lblMessage.Visible = false;
 		}
 
-		protected void bntLogIn_Click(object sender, EventArgs e)
+		protected void btnLogIn_Click(object sender, EventArgs e)
 		{			
 			User user = _dc.Users.FirstOrDefault(u => u.Username.ToLower() == txtUsername.Value.ToLower().Trim() && u.Password == txtPassword.Value);
 			if (user != null)
@@ -30,9 +30,9 @@ namespace CabinetBooking
 				txtUsername.Visible = false;
 				btnLogIn.Visible = false;
 				btnLogOut.Visible = true;
-				lblMassage.Visible = true;
-				lblMassage.ForeColor = Color.Black;
-				lblMassage.Text = user.Username;
+				lblMessage.Visible = true;
+				lblMessage.ForeColor = Color.Black;
+				lblMessage.Text = user.Username;
 			}
 			else
 			{
@@ -40,9 +40,9 @@ namespace CabinetBooking
 				txtUsername.Visible = true;
 				btnLogIn.Visible = true;
 				btnLogOut.Visible = false;
-				lblMassage.Visible = true;
-				lblMassage.ForeColor = Color.Red;
-				lblMassage.Text = " Worng username or password";
+				lblMessage.Visible = true;
+				lblMessage.ForeColor = Color.Red;
+				lblMessage.Text = " Worng username or password";
 			}
 		}
 
@@ -52,7 +52,7 @@ namespace CabinetBooking
 			txtUsername.Visible = true;
 			btnLogIn.Visible = true;
 			btnLogOut.Visible = false;
-			lblMassage.Visible = false;
+			lblMessage.Visible = false;
 			txtUsername.Value = "";
 		}
 	}
