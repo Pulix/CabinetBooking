@@ -71,6 +71,8 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="AddDoctors.aspx" />
+    <Content Include="Doctors.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Default.Master" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -301,6 +303,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CabinetBooking.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AddDoctors.aspx.cs">
+      <DependentUpon>AddDoctors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDoctors.aspx.designer.cs">
+      <DependentUpon>AddDoctors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors.aspx.cs">
+      <DependentUpon>Doctors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctors.aspx.designer.cs">
+      <DependentUpon>Doctors.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CNPvalidator.cs" />
     <Compile Include="Home.aspx.cs">
