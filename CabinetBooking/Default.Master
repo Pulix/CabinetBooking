@@ -7,7 +7,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>CabinetBooking</title>
-	
+
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="css/custom.css" rel="stylesheet" type="text/css" />
 	<link rel="Shortcut Icon" href="images/favicon.ico" />
@@ -53,7 +53,9 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
 <%--    <li><a href="#" class="btn-link" class="btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>--%>
-    <li><a href="LogIn.aspx"> Log In</a></li>
+    <li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
+    <li><asp:Label ID="lblUsername" runat="server"></asp:Label></li>
+
     </ul>
     </div>
     </div>   
@@ -103,11 +105,13 @@
 			</div>
 		</div>--%>
 
-		<div>
-			<asp:ContentPlaceHolder ID="BodyContent" runat="server">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<asp:ContentPlaceHolder ID="BodyContent" runat="server">
 
-				<%--DO NOT Insert Content Here--%>
-			</asp:ContentPlaceHolder>
+					<%--DO NOT Insert Content Here--%>
+				</asp:ContentPlaceHolder>
+			</div>
 		</div>
 		<!-- footer -->
 		<footer id="footer">

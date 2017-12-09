@@ -33,6 +33,8 @@ namespace CabinetBooking
 				lblMessage.Visible = true;
 				lblMessage.ForeColor = Color.Black;
 				lblMessage.Text = user.Username;
+				lblMessage.Style.Add("font-weight", "bold");
+				Session["LoggedUserID"] = user.ID.ToString();
 			}
 			else
 			{
@@ -54,6 +56,7 @@ namespace CabinetBooking
 			btnLogOut.Visible = false;
 			lblMessage.Visible = false;
 			txtUsername.Value = "";
+			Session.Clear();
 		}
 	}
 }
