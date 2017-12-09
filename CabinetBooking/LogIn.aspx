@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="login-page">
-		<div class="form">
+		<%--<div class="form">--%>
 
 			<div class="login-box">
 				<div class="login-logo">
@@ -36,6 +36,6 @@
 				</div>
 				<!-- /.login-box-body -->
 			</div>
-		</div>
+		<%--</div>--%>
 	</div>
 </asp:Content>

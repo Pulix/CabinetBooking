@@ -16,20 +16,25 @@
 
 
 
-	<form id="form1" runat="server">
+	<%--<form id="form1" runat="server">--%>
 		<div class="wrapper">
 			<asp:ContentPlaceHolder ID="MainContent" runat="server">
 
 				<%--DO NOT Insert Content Here--%>
 			</asp:ContentPlaceHolder>
-		</div>
-
-		
-	</form>
-	<footer class="footer">
+			<footer class="footer">
 			<div class="container">
 				<span class="text-muted"><p>&copy; 2017 - The Hawks</p></span>
 			</div>
 		</footer>
+		</div>
+
+		
+	<%--</form>--%>
+<%--	<footer class="footer">
+			<div class="container">
+				<span class="text-muted"><p>&copy; 2017 - The Hawks</p></span>
+			</div>
+		</footer>--%>
 </body>
 </html>
