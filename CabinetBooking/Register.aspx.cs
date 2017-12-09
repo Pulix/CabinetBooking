@@ -17,12 +17,12 @@ namespace CabinetBooking
 
 		}
 
-		protected void btnSubmit_Click(object sender, EventArgs e)
+		protected void btnRegister_Click(object sender, EventArgs e)
 		{
 			string firstName = txtFirstName.Value.ToString();
 			string lastName = txtLastName.Value.ToString();
 			string username = validateUsername(txtUsername.Value.ToString()); //txtUsername.Value.ToString();
-			string password = validatePassword(txtpassword1.Value.ToString(), txtpassword2.Value.ToString());
+			string password = validatePassword(txtPassword.Value.ToString(), txtRepeatPassword.Value.ToString());
 
 			if (password == "")
 			{

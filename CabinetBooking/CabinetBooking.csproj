@@ -67,20 +67,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CabinetBooking.dbml">
-      <SubType>Designer</SubType>
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>CabinetBooking.designer.cs</LastGenOutput>
-    </Content>
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="Home.aspx" />
     <Content Include="Default.Master" />
-    <None Include="CabinetBooking.dbml.layout">
-      <DependentUpon>CabinetBooking.dbml</DependentUpon>
-    </None>
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -101,7 +93,42 @@
     <Content Include="fonts\lato-regular-webfont.ttf" />
     <Content Include="fonts\lato-regular-webfont.woff" />
     <Content Include="fonts\lato-regular-webfont.woff2" />
+    <Content Include="CabinetBooking.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CabinetBooking.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="CabinetBooking.dbml.layout">
+      <DependentUpon>CabinetBooking.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <Content Include="Resources\AdminLTE\css\adminlte.css.map" />
+    <Content Include="Resources\AdminLTE\css\adminlte.min.css.map" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="Resources\Bootstrap\js\.eslintrc.json" />
+    <Content Include="Resources\Bootstrap\js\dist\alert.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\button.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\carousel.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\collapse.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\dropdown.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\index.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\modal.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\popover.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\scrollspy.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\tab.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\tooltip.js.map" />
+    <Content Include="Resources\Bootstrap\js\dist\util.js.map" />
+    <Content Include="Resources\Bootstrap\js\tests\.eslintrc.json" />
+    <Content Include="Resources\Bootstrap\js\tests\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -135,17 +162,145 @@
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery.js" />
     <Content Include="LogIn.aspx" />
+    <Content Include="Resources\AdminLTE\css\AdminLTE.css" />
+    <Content Include="Resources\AdminLTE\css\AdminLTE.min.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-select2.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Resources\AdminLTE\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-black-light.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-black-light.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-black.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-black.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-blue-light.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-blue-light.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-blue.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-blue.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-green-light.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-green-light.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-green.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-green.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-purple-light.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-purple-light.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-purple.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-purple.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-red-light.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-red-light.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-red.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-red.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-yellow-light.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-yellow.css" />
+    <Content Include="Resources\AdminLTE\css\skins\skin-yellow.min.css" />
+    <Content Include="Resources\AdminLTE\css\skins\_all-skins.css" />
+    <Content Include="Resources\AdminLTE\css\skins\_all-skins.min.css" />
+    <Content Include="Resources\AdminLTE\img\avatar.png" />
+    <Content Include="Resources\AdminLTE\img\avatar04.png" />
+    <Content Include="Resources\AdminLTE\img\avatar2.png" />
+    <Content Include="Resources\AdminLTE\img\avatar3.png" />
+    <Content Include="Resources\AdminLTE\img\avatar5.png" />
+    <Content Include="Resources\AdminLTE\img\boxed-bg.jpg" />
+    <Content Include="Resources\AdminLTE\img\boxed-bg.png" />
+    <Content Include="Resources\AdminLTE\img\credit\american-express.png" />
+    <Content Include="Resources\AdminLTE\img\credit\cirrus.png" />
+    <Content Include="Resources\AdminLTE\img\credit\mastercard.png" />
+    <Content Include="Resources\AdminLTE\img\credit\mestro.png" />
+    <Content Include="Resources\AdminLTE\img\credit\paypal.png" />
+    <Content Include="Resources\AdminLTE\img\credit\paypal2.png" />
+    <Content Include="Resources\AdminLTE\img\credit\visa.png" />
+    <Content Include="Resources\AdminLTE\img\default-50x50.gif" />
+    <Content Include="Resources\AdminLTE\img\icons.png" />
+    <Content Include="Resources\AdminLTE\img\photo1.png" />
+    <Content Include="Resources\AdminLTE\img\photo2.png" />
+    <Content Include="Resources\AdminLTE\img\photo3.jpg" />
+    <Content Include="Resources\AdminLTE\img\photo4.jpg" />
+    <Content Include="Resources\AdminLTE\img\user1-128x128.jpg" />
+    <Content Include="Resources\AdminLTE\img\user2-160x160.jpg" />
+    <Content Include="Resources\AdminLTE\img\user3-128x128.jpg" />
+    <Content Include="Resources\AdminLTE\img\user4-128x128.jpg" />
+    <Content Include="Resources\AdminLTE\img\user5-128x128.jpg" />
+    <Content Include="Resources\AdminLTE\img\user6-128x128.jpg" />
+    <Content Include="Resources\AdminLTE\img\user7-128x128.jpg" />
+    <Content Include="Resources\AdminLTE\img\user8-128x128.jpg" />
+    <Content Include="Resources\AdminLTE\js\adminlte.js" />
+    <Content Include="Resources\AdminLTE\js\adminlte.min.js" />
+    <Content Include="Resources\AdminLTE\js\demo.js" />
+    <Content Include="Resources\AdminLTE\js\pages\dashboard.js" />
+    <Content Include="Resources\AdminLTE\js\pages\dashboard2.js" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Resources\Bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Resources\Bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Resources\Bootstrap\js\dist\alert.js" />
+    <Content Include="Resources\Bootstrap\js\dist\button.js" />
+    <Content Include="Resources\Bootstrap\js\dist\carousel.js" />
+    <Content Include="Resources\Bootstrap\js\dist\collapse.js" />
+    <Content Include="Resources\Bootstrap\js\dist\dropdown.js" />
+    <Content Include="Resources\Bootstrap\js\dist\index.js" />
+    <Content Include="Resources\Bootstrap\js\dist\modal.js" />
+    <Content Include="Resources\Bootstrap\js\dist\popover.js" />
+    <Content Include="Resources\Bootstrap\js\dist\scrollspy.js" />
+    <Content Include="Resources\Bootstrap\js\dist\tab.js" />
+    <Content Include="Resources\Bootstrap\js\dist\tooltip.js" />
+    <Content Include="Resources\Bootstrap\js\dist\util.js" />
+    <Content Include="Resources\Bootstrap\js\src\alert.js" />
+    <Content Include="Resources\Bootstrap\js\src\button.js" />
+    <Content Include="Resources\Bootstrap\js\src\carousel.js" />
+    <Content Include="Resources\Bootstrap\js\src\collapse.js" />
+    <Content Include="Resources\Bootstrap\js\src\dropdown.js" />
+    <Content Include="Resources\Bootstrap\js\src\index.js" />
+    <Content Include="Resources\Bootstrap\js\src\modal.js" />
+    <Content Include="Resources\Bootstrap\js\src\popover.js" />
+    <Content Include="Resources\Bootstrap\js\src\scrollspy.js" />
+    <Content Include="Resources\Bootstrap\js\src\tab.js" />
+    <Content Include="Resources\Bootstrap\js\src\tooltip.js" />
+    <Content Include="Resources\Bootstrap\js\src\util.js" />
+    <Content Include="Resources\Bootstrap\js\tests\index.html" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\alert.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\button.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\modal.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\popover.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\tab.js" />
+    <Content Include="Resources\Bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="Resources\Bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="Resources\Bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\alert.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\button.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\carousel.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\collapse.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\dropdown.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\modal.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\popover.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\scrollspy.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\tab.html" />
+    <Content Include="Resources\Bootstrap\js\tests\visual\tooltip.html" />
+    <Content Include="Resources\Custom CSS\Custom.css" />
+    <Content Include="Resources\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Resources\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Resources\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Resources\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Web.config" />
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CabinetBooking.cs">
-      <DependentUpon>CabinetBooking.dbml</DependentUpon>
-    </Compile>
     <Compile Include="CabinetBooking.designer.cs">
-      <DependentUpon>CabinetBooking.dbml</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CabinetBooking.dbml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CNPvalidator.cs" />
     <Compile Include="Home.aspx.cs">
