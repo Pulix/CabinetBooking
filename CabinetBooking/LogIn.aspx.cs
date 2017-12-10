@@ -14,11 +14,11 @@ namespace CabinetBooking
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			txtPassword.Visible = true;
-			txtUsername.Visible = true;
-			btnLogIn.Visible = true;
-			btnLogOut.Visible= false;
-			lblMessage.Visible = false;
+			//txtPassword.Visible = true;
+			//txtUsername.Visible = true;
+			//btnLogIn.Visible = true;
+			//btnLogOut.Visible= false;
+			//lblMessage.Visible = false;
 		}
 
 		protected void btnLogIn_Click(object sender, EventArgs e)
@@ -35,6 +35,7 @@ namespace CabinetBooking
 				lblMessage.Text = user.Username;
 				lblMessage.Style.Add("font-weight", "bold");
 				Session["LoggedUserID"] = user.ID.ToString();
+				btnLogIn.Visible = false;
 			}
 			else
 			{
@@ -50,13 +51,14 @@ namespace CabinetBooking
 
 		protected void btnLogOut_Click(object sender, EventArgs e)
 		{
-			txtPassword.Visible = true;
-			txtUsername.Visible = true;
-			btnLogIn.Visible = true;
-			btnLogOut.Visible = false;
-			lblMessage.Visible = false;
-			txtUsername.Value = "";
+			//txtPassword.Visible = true;
+			//txtUsername.Visible = true;
+			//btnLogIn.Visible = true;
+			//btnLogOut.Visible = false;
+			//lblMessage.Visible = false;
+			//txtUsername.Value = "";
 			Session.Clear();
+			btnLogIn.Visible = true;
 		}
 	}
 }

@@ -299,17 +299,17 @@
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CabinetBooking.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CabinetBooking.dbml</DependentUpon>
-    </Compile>
     <Compile Include="AddDoctors.aspx.cs">
       <DependentUpon>AddDoctors.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddDoctors.aspx.designer.cs">
       <DependentUpon>AddDoctors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CabinetBooking.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CabinetBooking.dbml</DependentUpon>
     </Compile>
     <Compile Include="Doctors.aspx.cs">
       <DependentUpon>Doctors.aspx</DependentUpon>
