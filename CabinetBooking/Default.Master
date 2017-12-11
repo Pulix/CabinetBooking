@@ -49,8 +49,8 @@
     <li><a href="#">Bootstrap</a></li>
     </ul>
     </li>--%>
-    <li><a href="#">Appointments</a></li>
-    <li><a href="#">Specialities</a></li>
+    <li><a href="Appointments.aspx">Appointments</a></li>
+    <li><a href="Specialities.aspx">Specialities</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
 <%--    <li><a href="#" class="btn-link" class="btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>--%>
