@@ -24,7 +24,7 @@ namespace CabinetBooking
 				User user = _dc.Users.FirstOrDefault(u => u.ID == Int32.Parse(Session["LoggedUserID"].ToString()));
 				if (user != null)
 				{
-					lblUsername.Text = user.Username.ToString();
+					lblUsername.Text = user.FirstName.ToString()+""+user.LastName.ToString();
 					btnLogOut.Visible = true;
 				}
 			}

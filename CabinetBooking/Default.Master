@@ -55,7 +55,7 @@
 <%--    <li><a href="#" class="btn-link" class="btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>--%>
     <li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
 	<li><a id="btnSignUp" href="Register.aspx" runat="server" visible="false"> Sign Up</a></li>
-    <li><asp:Label ID="lblUsername" runat="server"></asp:Label></li>
+    <li><asp:Label ID="lblUsername" runat="server" Font-Bold="true" ></asp:Label></li>
 	<li><asp:Button Id="btnLogOut" runat="server" visible="false" Text="Log Out" BackColor="#339966" ForeColor="#46464d"
 		 BorderStyle="None" OnClick="btnLogOut_Click"></asp:Button></li>
 
