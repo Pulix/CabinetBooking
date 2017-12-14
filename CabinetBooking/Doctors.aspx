@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
 			<h2>Doctors</h2>
-			<asp:table id="DoctorsTable" class="table table-bordered" runat="server" width="100%"> 
+			<asp:table id="DoctorsTable" class="table table-bordered table-hover" runat="server" width="100%"> 
 				<asp:TableRow>
 					<asp:TableCell>First Name</asp:TableCell>
 					<asp:TableCell>Last Name</asp:TableCell>

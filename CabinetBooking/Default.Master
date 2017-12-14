@@ -36,29 +36,16 @@
     </div>
     <div class="collapse navbar-collapse" id="myNav">
     <ul class="nav navbar-nav">
-    <li class="active"><a href="Index.aspx">Home</a></li>
-    <li><a href="Doctors.aspx">Doctors</a></li>
-	
-    <li class="dropdown">
-    <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorial <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-    <li class="active"><a href="#">Photoshop</a></li>
-    <li><a href="#">Jquery</a></li>
-    <li><a href="#">Javascript</a></li>
-    <li><a href="#">Bootstrap</a></li>
-    </ul>
-    </li>--%>
-    <li><a href="#">Appointments</a></li>
-    <li><a href="#">Specialities</a></li>
+		<li class="active"><a href="Index.aspx">Home</a></li>
+		<li><a href="Doctors.aspx">Doctors</a></li>
+		<li><a href="Appointments.aspx">Appointments</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-<%--    <li><a href="#" class="btn-link" class="btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>--%>
-    <li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
-	<li><a id="btnSignUp" href="Register.aspx" runat="server" visible="false"> Sign Up</a></li>
-    <li><asp:Label ID="lblUsername" runat="server" Font-Bold="true" ></asp:Label></li>
-	<li><asp:Button Id="btnLogOut" runat="server" visible="false" Text="Log Out" BackColor="#339966" ForeColor="#46464d"
-		 BorderStyle="None" OnClick="btnLogOut_Click"></asp:Button></li>
-
+		<li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
+		<li><a id="btnSignUp" href="Register.aspx" runat="server" visible="false"> Sign Up</a></li>
+		<li><asp:Label ID="lblUsername" runat="server" Font-Bold="true" ></asp:Label></li>
+		<li><asp:Button Id="btnLogOut" runat="server" visible="false" Text="Log Out" BackColor="#339966" ForeColor="#46464d"
+			 BorderStyle="None" OnClick="btnLogOut_Click"></asp:Button></li>
     </ul>
     </div>
     </div>   
@@ -173,15 +160,6 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">				
-					<%--<div class="col-sm-6">
-						<ul class="footer-menu list-inline">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Doctors</a></li>
-							<li><a href="#">Appointments</a></li>
-							<li><a href="#">Specialities</a></li>
-						</ul>
-					</div>--%>
-
 					<div class="row">  <%--"col-sm-6"--%>
 						<div class="copy-right text-right">
 							<p>&copy; Copyright <strong>Hawkings</strong> </p>
@@ -196,5 +174,7 @@
 		<script src="js/jquery.js" type="text/javascript"></script>
 		<script src="js/bootstrap.js" type="text/javascript"></script>
 	</form>
+	<asp:ContentPlaceHolder ID="scripts" runat="server">
+	</asp:ContentPlaceHolder>
 </body>
 </html>

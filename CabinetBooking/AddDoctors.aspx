@@ -6,6 +6,7 @@
 
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
+			<h2 style="padding-bottom: 30px;">Add a new Doctor</h2>
 			<div class="box-body">
 				<div class="form-group">
 					<label for="txtDoctorName">Doctor's Name</label>
@@ -27,9 +28,9 @@
 					<label for="txtPassword2">Repeat Password</label>
 					<input type="password" placeholder="password" id="txtPassword2" class="form-control" runat="server" />
 				</div>
-				<div class="row">
+				<div class="row center-block" style="padding-top: 30px; padding-bottom: 10px;">
 					<asp:Button ID="addDoctor" runat="server" Text="Add Doctor" OnClick="addDoctor_Click" />
-					<div class="col-md-1 col-md-offset-4"></div>
+					<div class="col-md-1 col-md-offset-3"></div>
 				</div>
 			</div>
 		</div>
