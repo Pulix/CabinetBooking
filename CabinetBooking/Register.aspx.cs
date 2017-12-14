@@ -29,6 +29,7 @@ namespace CabinetBooking
 				password = "Parola schimbatoareeeee!";
 			}
 
+			Label1.Text = firstName + " " + lastName + " " + username + " " + password;
 
 			User newUser = new User();
 			newUser.FirstName = firstName;

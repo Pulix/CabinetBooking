@@ -24,23 +24,9 @@ namespace CabinetBooking
 				if (user != null)
 				{
 					lblUsername.Text = user.Username.ToString();
-					btnLogOut.Visible = true;
 				}
 			}
 
-		}
-
-		protected void btnLogOut_Click(object sender, EventArgs e)
-		{
-			//txtPassword.Visible = true;
-			//txtUsername.Visible = true;
-			//btnLogIn.Visible = true;
-			//btnLogOut.Visible = false;
-			//lblMessage.Visible = false;
-			//txtUsername.Value = "";
-			Session.Clear();
-			btnLogIn.Visible = true;
-			btnLogOut.Visible = false;
 		}
 	}
 }

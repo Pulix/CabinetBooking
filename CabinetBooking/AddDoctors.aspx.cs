@@ -19,7 +19,7 @@ namespace CabinetBooking
 		protected void addDoctor_Click(object sender, EventArgs e)
 		{
 
-			string firstName = txtDoctorName.Value.ToString();
+			string firstName = txtDoctorName .Value.ToString();
 			string lastName = txtDoctorLastName.Value.ToString();
 			string username = validateUsername(txtDoctorName.Value.ToString()); //txtUsername.Value.ToString();
 			string password = validatePassword(txtPassword.Value.ToString(), txtPassword2.Value.ToString());

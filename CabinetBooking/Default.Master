@@ -36,8 +36,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNav">
     <ul class="nav navbar-nav">
-    <li class="active"><a href="/">Home</a>
-    </li>
+    <li class="active"><a href="#">Home</a></li>
     <li><a href="Doctors.aspx">Doctors</a></li>
 	
     <li class="dropdown">
@@ -49,13 +48,12 @@
     <li><a href="#">Bootstrap</a></li>
     </ul>
     </li>--%>
-    <li><a href="Appointments.aspx">Appointments</a></li>
-    <li><a href="Specialities.aspx">Specialities</a></li>
+    <li><a href="#">Appointments</a></li>
+    <li><a href="#">Specialities</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
 <%--    <li><a href="#" class="btn-link" class="btn-link" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Sign-In</a></li>--%>
     <li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
-	<li><a id="btnLogOut" href="/" runat="server" visible="false"> Log Out</a></li>
     <li><asp:Label ID="lblUsername" runat="server"></asp:Label></li>
 
     </ul>

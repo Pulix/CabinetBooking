@@ -44,10 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EO.Web, Version=18.0.15.0, Culture=neutral, PublicKeyToken=e92353a6bf73fffc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Essential Objects\EO.Total 2018\EO.Web.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -69,14 +65,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Telerik.Web.UI, Version=2017.2.711.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for ASP.NET AJAX R2 2017\Bin45\Telerik.Web.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddAppointments.aspx" />
-    <Content Include="Appointments.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
@@ -114,8 +104,6 @@
       <DependentUpon>CabinetBooking.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <Content Include="images\calender.png" />
-    <Content Include="MyAppointments.aspx" />
     <Content Include="Resources\AdminLTE\css\adminlte.css.map" />
     <Content Include="Resources\AdminLTE\css\adminlte.min.css.map" />
     <Content Include="Resources\Bootstrap\dist\css\bootstrap-grid.css.map" />
@@ -307,37 +295,16 @@
     <Content Include="Resources\timepicker\bootstrap-timepicker.js" />
     <Content Include="Resources\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Resources\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Scripts\calendar-en.min.js" />
-    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Scripts\jquery.dynDateTime.min.js" />
-    <Content Include="Specialities.aspx" />
-    <Content Include="Styles\calendar-blue.css" />
     <Content Include="Web.config" />
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddAppointments.aspx.cs">
-      <DependentUpon>AddAppointments.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddAppointments.aspx.designer.cs">
-      <DependentUpon>AddAppointments.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AddDoctors.aspx.cs">
       <DependentUpon>AddDoctors.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddDoctors.aspx.designer.cs">
       <DependentUpon>AddDoctors.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Appointments.aspx.cs">
-      <DependentUpon>Appointments.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Appointments.aspx.designer.cs">
-      <DependentUpon>Appointments.aspx</DependentUpon>
     </Compile>
     <Compile Include="CabinetBooking.designer.cs">
       <AutoGen>True</AutoGen>
@@ -380,13 +347,6 @@
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyAppointments.aspx.cs">
-      <DependentUpon>MyAppointments.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MyAppointments.aspx.designer.cs">
-      <DependentUpon>MyAppointments.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -395,22 +355,12 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Specialities.aspx.cs">
-      <DependentUpon>Specialities.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Specialities.aspx.designer.cs">
-      <DependentUpon>Specialities.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
