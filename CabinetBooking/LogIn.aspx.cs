@@ -30,7 +30,7 @@ namespace CabinetBooking
 				btnLogIn.Visible = false;
 				lblMessage.Style.Add("font-weight", "bold");
 				Session["LoggedUserID"] = user.ID.ToString();
-				Server.Transfer("Index.aspx", true);
+				Server.Transfer("Index.aspx");
 
 			}
 			else
