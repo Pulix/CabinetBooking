@@ -17,6 +17,7 @@ namespace CabinetBooking
 			if (Session["LoggedUserID"] == null)
 			{
 				btnLogIn.Visible = true;
+				btnSignUp.Visible = true;
 			}
 			else
 			{
@@ -24,8 +25,17 @@ namespace CabinetBooking
 				if (user != null)
 				{
 					lblUsername.Text = user.Username.ToString();
+					btnLogOut.Visible = true;
 				}
 			}
+
+		}
+
+		protected void btnLogOut_Click(object sender, EventArgs e)
+		{
+			btnLogOut.Visible = false;
+			Session.Clear();
+			Server.Transfer("Index.aspx", true);
 
 		}
 	}

@@ -10,7 +10,6 @@
 				<input type="password" placeholder="Password" id="txtPassword" runat="server" />
 				<asp:Button ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
 				<asp:Label ID="lblMessage" runat="server" Text=""></asp:Label> 
-				<asp:Button ID="btnLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
 				<p class="message">Not registered? <a href="Register.aspx">Create an account</a></p>
 			</form>
 		</div>

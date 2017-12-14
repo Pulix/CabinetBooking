@@ -17,7 +17,6 @@ namespace CabinetBooking
 			txtPassword.Visible = true;
 			txtUsername.Visible = true;
 			btnLogIn.Visible = true;
-			btnLogOut.Visible= false;
 			lblMessage.Visible = false;
 		}
 
@@ -29,34 +28,21 @@ namespace CabinetBooking
 				txtPassword.Visible = false;
 				txtUsername.Visible = false;
 				btnLogIn.Visible = false;
-				btnLogOut.Visible = true;
-				lblMessage.Visible = true;
-				lblMessage.ForeColor = Color.Black;
-				lblMessage.Text = user.Username;
 				lblMessage.Style.Add("font-weight", "bold");
 				Session["LoggedUserID"] = user.ID.ToString();
+				Server.Transfer("Index.aspx", true);
+
 			}
 			else
 			{
 				txtPassword.Visible = true;
 				txtUsername.Visible = true;
 				btnLogIn.Visible = true;
-				btnLogOut.Visible = false;
 				lblMessage.Visible = true;
 				lblMessage.ForeColor = Color.Red;
 				lblMessage.Text = " Worng username or password";
 			}
 		}
-
-		protected void btnLogOut_Click(object sender, EventArgs e)
-		{
-			txtPassword.Visible = true;
-			txtUsername.Visible = true;
-			btnLogIn.Visible = true;
-			btnLogOut.Visible = false;
-			lblMessage.Visible = false;
-			txtUsername.Value = "";
-			Session.Clear();
-		}
+		
 	}
 }
