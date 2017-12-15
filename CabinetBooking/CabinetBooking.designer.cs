@@ -48,7 +48,7 @@ namespace CabinetBooking
     #endregion
 		
 		public CabinetBookingDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["T2017FB_CabinetBookingConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["T2017FB_CabinetBookingConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

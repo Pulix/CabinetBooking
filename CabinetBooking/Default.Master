@@ -38,7 +38,9 @@
     <ul class="nav navbar-nav">
 		<li class="active"><a href="Index.aspx">Home</a></li>
 		<li><a href="Doctors.aspx">Doctors</a></li>
-		<li><a href="Appointments.aspx">Appointments</a></li>
+		<li><a href="Appointments.aspx">Appointments</a></li
+		<li><a id="btnAddDoctors" href="AddDoctors.aspx" runat="server" visible="false">Add doctors</a></li>
+		<li><a id="btnAddSpecialities" href="AddSpecialities.aspx" runat="server" visible="false">Add specialities</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
 		<li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
