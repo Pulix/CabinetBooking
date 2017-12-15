@@ -14,7 +14,7 @@
 					<asp:Label ID="lblMessage" ForeColor="Red" runat="server" Text=""></asp:Label>
 				</div>
 				<div class="row center-block" style="padding-top: 30px; padding-bottom: 10px;">
-					<asp:Button ID="tbtnAddSpeciality" runat="server" Text="Add Speciality" OnClick="tbtnAddSpeciality_Click" />
+					<asp:Button ID="btnAddSpeciality" runat="server" Text="Add Speciality" OnClick="btnAddSpeciality_Click" />
 					<div class="col-md-4 col-md-offset-4"></div>
 				</div>
 			</div>

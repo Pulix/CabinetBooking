@@ -51,8 +51,7 @@ namespace CabinetBooking
 			newUser.Type = 3;
 			_dc.Users.InsertOnSubmit(newUser);
 			_dc.SubmitChanges();
-
-			Response.Redirect("LogIn.aspx");
+			lblMessage.Text = "Registration succesful!";
 		}
 
 		private string validateUsername(string userName)

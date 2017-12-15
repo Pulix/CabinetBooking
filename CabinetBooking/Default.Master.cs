@@ -26,6 +26,12 @@ namespace CabinetBooking
 				{
 					lblUsername.Text = user.FirstName.ToString()+""+user.LastName.ToString();
 					btnLogOut.Visible = true;
+
+						if (user.Type == 1)
+						{
+						btnAddDoctors.Visible = true;
+						btnAddSpecialities.Visible = true;
+						}
 				}
 			}
 

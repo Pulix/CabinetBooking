@@ -34,7 +34,7 @@ namespace CabinetBooking
 			}
 		}
 
-		protected void tbtnAddSpeciality_Click(object sender, EventArgs e)
+		protected void btnAddSpeciality_Click(object sender, EventArgs e)
 		{
 			string specialityName = txtSpecialityName.Value.ToString();
 
