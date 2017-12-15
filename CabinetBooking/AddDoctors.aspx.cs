@@ -13,7 +13,19 @@ namespace CabinetBooking
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			if (Session["LoggedUserID"] != null)
+			{
+				User user = _dc.Users.FirstOrDefault(u => u.ID == Convert.ToInt32(Session["LoggedUserID"].ToString()));
 
+				if (user.Type != 1)
+				{
+					Response.Redirect("Index.aspx");
+				}
+			}
+			else
+			{
+				Response.Redirect("Index.aspx");
+			}
 		}
 
 		protected void addDoctor_Click(object sender, EventArgs e)

@@ -36,7 +36,6 @@ namespace CabinetBooking
 			btnLogOut.Visible = false;
 			Session.Clear();
 			Server.Transfer("Index.aspx");
-
 		}
 	}
 }

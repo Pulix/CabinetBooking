@@ -21,12 +21,15 @@
 					<input type="text" placeholder="Doctor's Username" class="form-control" id="txtDoctorUserName" runat="server" />
 				</div>
 				<div class="form-group">
-					<label for="txtPassword">Password</label>
+					<label for="txtPassword">Pin (4 Digits)</label>
 					<input type="password" placeholder="Password" id="txtPassword" class="form-control" runat="server" />
 				</div>
 				<div class="form-group">
-					<label for="txtPassword2">Repeat Password</label>
+					<label for="txtPassword2">Repeat Pin</label>
 					<input type="password" placeholder="Repeat Password" id="txtPassword2" class="form-control" runat="server" />
+				</div>
+				<div class="form-group">
+					<asp:Label ID="lblMessage" ForeColor="Red" runat="server" Text=""></asp:Label>
 				</div>
 				<div class="row center-block" style="padding-top: 30px; padding-bottom: 10px;">
 					<asp:Button ID="addDoctor" runat="server" Text="Add Doctor" OnClick="addDoctor_Click" />

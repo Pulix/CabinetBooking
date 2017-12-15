@@ -14,7 +14,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
-			<h2 style="padding-bottom: 30px;">Add a new Doctor</h2>
+			<h2 style="padding-bottom: 30px;">Register</h2>
 			<div class="box-body">
 				<div class="form-group">
 					<label for="txtFirstName">First Name</label>
@@ -51,31 +51,4 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	
-	<%--<br />
-	<br />
-	<asp:Label ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
-	<input type="text" placeholder="name" id="txtFirstName" runat="server" />&nbsp;
-	<asp:Label ID="lblLastName" runat="server" Text="Last Name"></asp:Label>
-	<input type="text" placeholder="name" id="txtLastName" runat="server" />
-	<br />
-	<br />
-	<asp:Label ID="lblUsername" runat="server" Text="Username"></asp:Label>
-	<input type="text" placeholder="name" id="txtUsername" runat="server" />
-	<br />
-	<br />
-	<asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-	<input type="password" placeholder="password" id="txtPassword" runat="server" /><br />
-	<br />
-	<asp:Label ID="lblRepeatPassword" runat="server" Text="Repeat Password"></asp:Label>
-	<input type="password" placeholder="password" id="txtRepeatPassword" runat="server" /><br />
-	<br />
-	<br />
-	<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-	<br />
-	<asp:Button runat="server" ID="btnRegister" OnClick="btnRegister_Click" Text="Register" />
-	<br />
-	<br />--%>
 </asp:Content>

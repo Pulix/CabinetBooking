@@ -69,7 +69,7 @@ namespace CabinetBooking
 				}
 				else
 				{
-					Session["Error"] = "InvalidCNP";
+					Session["Error"] = "Invalid CNP";
 					Response.Redirect("Register.aspx");
 					return "";
 				}
