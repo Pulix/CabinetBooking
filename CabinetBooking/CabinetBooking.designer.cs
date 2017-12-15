@@ -39,13 +39,16 @@ namespace CabinetBooking
     partial void InsertDoctor(Doctor instance);
     partial void UpdateDoctor(Doctor instance);
     partial void DeleteDoctor(Doctor instance);
+    partial void InsertDoctorsAndSpeciality(DoctorsAndSpeciality instance);
+    partial void UpdateDoctorsAndSpeciality(DoctorsAndSpeciality instance);
+    partial void DeleteDoctorsAndSpeciality(DoctorsAndSpeciality instance);
     partial void InsertSpeciality(Speciality instance);
     partial void UpdateSpeciality(Speciality instance);
     partial void DeleteSpeciality(Speciality instance);
     #endregion
 		
 		public CabinetBookingDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["T2017FB_CabinetBookingConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["T2017FB_CabinetBookingConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -98,6 +101,14 @@ namespace CabinetBooking
 			}
 		}
 		
+		public System.Data.Linq.Table<DoctorsAndSpeciality> DoctorsAndSpecialities
+		{
+			get
+			{
+				return this.GetTable<DoctorsAndSpeciality>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Speciality> Specialities
 		{
 			get
@@ -117,7 +128,7 @@ namespace CabinetBooking
 		
 		private int _UserID;
 		
-		private int _DoctorAndSpecility;
+		private int _DoctorAndSpecialityID;
 		
 		private System.DateTime _AppointmentDate;
 		
@@ -125,7 +136,7 @@ namespace CabinetBooking
 		
 		private EntityRef<User> _User;
 		
-		private EntityRef<Speciality> _Speciality;
+		private EntityRef<DoctorsAndSpeciality> _DoctorsAndSpeciality;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -135,8 +146,8 @@ namespace CabinetBooking
     partial void OnIDChanged();
     partial void OnUserIDChanging(int value);
     partial void OnUserIDChanged();
-    partial void OnDoctorAndSpecilityChanging(int value);
-    partial void OnDoctorAndSpecilityChanged();
+    partial void OnDoctorAndSpecialityIDChanging(int value);
+    partial void OnDoctorAndSpecialityIDChanged();
     partial void OnAppointmentDateChanging(System.DateTime value);
     partial void OnAppointmentDateChanged();
     partial void OnIsDeletedChanging(bool value);
@@ -146,7 +157,7 @@ namespace CabinetBooking
 		public Appointment()
 		{
 			this._User = default(EntityRef<User>);
-			this._Speciality = default(EntityRef<Speciality>);
+			this._DoctorsAndSpeciality = default(EntityRef<DoctorsAndSpeciality>);
 			OnCreated();
 		}
 		
@@ -194,26 +205,26 @@ namespace CabinetBooking
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoctorAndSpecility", DbType="Int NOT NULL")]
-		public int DoctorAndSpecility
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoctorAndSpecialityID", DbType="Int NOT NULL")]
+		public int DoctorAndSpecialityID
 		{
 			get
 			{
-				return this._DoctorAndSpecility;
+				return this._DoctorAndSpecialityID;
 			}
 			set
 			{
-				if ((this._DoctorAndSpecility != value))
+				if ((this._DoctorAndSpecialityID != value))
 				{
-					if (this._Speciality.HasLoadedOrAssignedValue)
+					if (this._DoctorsAndSpeciality.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnDoctorAndSpecilityChanging(value);
+					this.OnDoctorAndSpecialityIDChanging(value);
 					this.SendPropertyChanging();
-					this._DoctorAndSpecility = value;
-					this.SendPropertyChanged("DoctorAndSpecility");
-					this.OnDoctorAndSpecilityChanged();
+					this._DoctorAndSpecialityID = value;
+					this.SendPropertyChanged("DoctorAndSpecialityID");
+					this.OnDoctorAndSpecialityIDChanged();
 				}
 			}
 		}
@@ -292,36 +303,36 @@ namespace CabinetBooking
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Speciality_Appointment", Storage="_Speciality", ThisKey="DoctorAndSpecility", OtherKey="ID", IsForeignKey=true)]
-		public Speciality Speciality
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DoctorsAndSpeciality_Appointment", Storage="_DoctorsAndSpeciality", ThisKey="DoctorAndSpecialityID", OtherKey="ID", IsForeignKey=true)]
+		public DoctorsAndSpeciality DoctorsAndSpeciality
 		{
 			get
 			{
-				return this._Speciality.Entity;
+				return this._DoctorsAndSpeciality.Entity;
 			}
 			set
 			{
-				Speciality previousValue = this._Speciality.Entity;
+				DoctorsAndSpeciality previousValue = this._DoctorsAndSpeciality.Entity;
 				if (((previousValue != value) 
-							|| (this._Speciality.HasLoadedOrAssignedValue == false)))
+							|| (this._DoctorsAndSpeciality.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Speciality.Entity = null;
+						this._DoctorsAndSpeciality.Entity = null;
 						previousValue.Appointments.Remove(this);
 					}
-					this._Speciality.Entity = value;
+					this._DoctorsAndSpeciality.Entity = value;
 					if ((value != null))
 					{
 						value.Appointments.Add(this);
-						this._DoctorAndSpecility = value.ID;
+						this._DoctorAndSpecialityID = value.ID;
 					}
 					else
 					{
-						this._DoctorAndSpecility = default(int);
+						this._DoctorAndSpecialityID = default(int);
 					}
-					this.SendPropertyChanged("Speciality");
+					this.SendPropertyChanged("DoctorsAndSpeciality");
 				}
 			}
 		}
@@ -369,8 +380,6 @@ namespace CabinetBooking
 		
 		private EntitySet<Appointment> _Appointments;
 		
-		private EntitySet<Speciality> _Specialities;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -394,7 +403,6 @@ namespace CabinetBooking
 		public User()
 		{
 			this._Appointments = new EntitySet<Appointment>(new Action<Appointment>(this.attach_Appointments), new Action<Appointment>(this.detach_Appointments));
-			this._Specialities = new EntitySet<Speciality>(new Action<Speciality>(this.attach_Specialities), new Action<Speciality>(this.detach_Specialities));
 			OnCreated();
 		}
 		
@@ -551,19 +559,6 @@ namespace CabinetBooking
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Speciality", Storage="_Specialities", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Speciality> Specialities
-		{
-			get
-			{
-				return this._Specialities;
-			}
-			set
-			{
-				this._Specialities.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -595,18 +590,6 @@ namespace CabinetBooking
 			this.SendPropertyChanging();
 			entity.User = null;
 		}
-		
-		private void attach_Specialities(Speciality entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Specialities(Speciality entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Doctors")]
@@ -626,6 +609,8 @@ namespace CabinetBooking
 		private string _Pin;
 		
 		private bool _IsDeleted;
+		
+		private EntitySet<DoctorsAndSpeciality> _DoctorsAndSpecialities;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -647,6 +632,7 @@ namespace CabinetBooking
 		
 		public Doctor()
 		{
+			this._DoctorsAndSpecialities = new EntitySet<DoctorsAndSpeciality>(new Action<DoctorsAndSpeciality>(this.attach_DoctorsAndSpecialities), new Action<DoctorsAndSpeciality>(this.detach_DoctorsAndSpecialities));
 			OnCreated();
 		}
 		
@@ -770,6 +756,19 @@ namespace CabinetBooking
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Doctor_DoctorsAndSpeciality", Storage="_DoctorsAndSpecialities", ThisKey="ID", OtherKey="DoctorsID")]
+		public EntitySet<DoctorsAndSpeciality> DoctorsAndSpecialities
+		{
+			get
+			{
+				return this._DoctorsAndSpecialities;
+			}
+			set
+			{
+				this._DoctorsAndSpecialities.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -789,25 +788,39 @@ namespace CabinetBooking
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_DoctorsAndSpecialities(DoctorsAndSpeciality entity)
+		{
+			this.SendPropertyChanging();
+			entity.Doctor = this;
+		}
+		
+		private void detach_DoctorsAndSpecialities(DoctorsAndSpeciality entity)
+		{
+			this.SendPropertyChanging();
+			entity.Doctor = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Specialities")]
-	public partial class Speciality : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DoctorsAndSpecialities")]
+	public partial class DoctorsAndSpeciality : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private int _UserID;
+		private int _DoctorsID;
 		
-		private string _SpecialityTag;
+		private int _SpecialityID;
 		
 		private bool _IsDeleted;
 		
 		private EntitySet<Appointment> _Appointments;
 		
-		private EntityRef<User> _User;
+		private EntityRef<Doctor> _Doctor;
+		
+		private EntityRef<Speciality> _Speciality;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -815,18 +828,19 @@ namespace CabinetBooking
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnSpecialityTagChanging(string value);
-    partial void OnSpecialityTagChanged();
+    partial void OnDoctorsIDChanging(int value);
+    partial void OnDoctorsIDChanged();
+    partial void OnSpecialityIDChanging(int value);
+    partial void OnSpecialityIDChanged();
     partial void OnIsDeletedChanging(bool value);
     partial void OnIsDeletedChanged();
     #endregion
 		
-		public Speciality()
+		public DoctorsAndSpeciality()
 		{
 			this._Appointments = new EntitySet<Appointment>(new Action<Appointment>(this.attach_Appointments), new Action<Appointment>(this.detach_Appointments));
-			this._User = default(EntityRef<User>);
+			this._Doctor = default(EntityRef<Doctor>);
+			this._Speciality = default(EntityRef<Speciality>);
 			OnCreated();
 		}
 		
@@ -850,46 +864,50 @@ namespace CabinetBooking
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoctorsID", DbType="Int NOT NULL")]
+		public int DoctorsID
 		{
 			get
 			{
-				return this._UserID;
+				return this._DoctorsID;
 			}
 			set
 			{
-				if ((this._UserID != value))
+				if ((this._DoctorsID != value))
 				{
-					if (this._User.HasLoadedOrAssignedValue)
+					if (this._Doctor.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnUserIDChanging(value);
+					this.OnDoctorsIDChanging(value);
 					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
+					this._DoctorsID = value;
+					this.SendPropertyChanged("DoctorsID");
+					this.OnDoctorsIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialityTag", DbType="NChar(16) NOT NULL", CanBeNull=false)]
-		public string SpecialityTag
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialityID", DbType="Int NOT NULL")]
+		public int SpecialityID
 		{
 			get
 			{
-				return this._SpecialityTag;
+				return this._SpecialityID;
 			}
 			set
 			{
-				if ((this._SpecialityTag != value))
+				if ((this._SpecialityID != value))
 				{
-					this.OnSpecialityTagChanging(value);
+					if (this._Speciality.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSpecialityIDChanging(value);
 					this.SendPropertyChanging();
-					this._SpecialityTag = value;
-					this.SendPropertyChanged("SpecialityTag");
-					this.OnSpecialityTagChanged();
+					this._SpecialityID = value;
+					this.SendPropertyChanged("SpecialityID");
+					this.OnSpecialityIDChanged();
 				}
 			}
 		}
@@ -914,7 +932,7 @@ namespace CabinetBooking
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Speciality_Appointment", Storage="_Appointments", ThisKey="ID", OtherKey="DoctorAndSpecility")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DoctorsAndSpeciality_Appointment", Storage="_Appointments", ThisKey="ID", OtherKey="DoctorAndSpecialityID")]
 		public EntitySet<Appointment> Appointments
 		{
 			get
@@ -927,36 +945,70 @@ namespace CabinetBooking
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Speciality", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Doctor_DoctorsAndSpeciality", Storage="_Doctor", ThisKey="DoctorsID", OtherKey="ID", IsForeignKey=true)]
+		public Doctor Doctor
 		{
 			get
 			{
-				return this._User.Entity;
+				return this._Doctor.Entity;
 			}
 			set
 			{
-				User previousValue = this._User.Entity;
+				Doctor previousValue = this._Doctor.Entity;
 				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
+							|| (this._Doctor.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._User.Entity = null;
-						previousValue.Specialities.Remove(this);
+						this._Doctor.Entity = null;
+						previousValue.DoctorsAndSpecialities.Remove(this);
 					}
-					this._User.Entity = value;
+					this._Doctor.Entity = value;
 					if ((value != null))
 					{
-						value.Specialities.Add(this);
-						this._UserID = value.ID;
+						value.DoctorsAndSpecialities.Add(this);
+						this._DoctorsID = value.ID;
 					}
 					else
 					{
-						this._UserID = default(int);
+						this._DoctorsID = default(int);
 					}
-					this.SendPropertyChanged("User");
+					this.SendPropertyChanged("Doctor");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Speciality_DoctorsAndSpeciality", Storage="_Speciality", ThisKey="SpecialityID", OtherKey="ID", IsForeignKey=true)]
+		public Speciality Speciality
+		{
+			get
+			{
+				return this._Speciality.Entity;
+			}
+			set
+			{
+				Speciality previousValue = this._Speciality.Entity;
+				if (((previousValue != value) 
+							|| (this._Speciality.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Speciality.Entity = null;
+						previousValue.DoctorsAndSpecialities.Remove(this);
+					}
+					this._Speciality.Entity = value;
+					if ((value != null))
+					{
+						value.DoctorsAndSpecialities.Add(this);
+						this._SpecialityID = value.ID;
+					}
+					else
+					{
+						this._SpecialityID = default(int);
+					}
+					this.SendPropertyChanged("Speciality");
 				}
 			}
 		}
@@ -984,10 +1036,148 @@ namespace CabinetBooking
 		private void attach_Appointments(Appointment entity)
 		{
 			this.SendPropertyChanging();
-			entity.Speciality = this;
+			entity.DoctorsAndSpeciality = this;
 		}
 		
 		private void detach_Appointments(Appointment entity)
+		{
+			this.SendPropertyChanging();
+			entity.DoctorsAndSpeciality = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Specialities")]
+	public partial class Speciality : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _SpecialityName;
+		
+		private bool _IsDeleted;
+		
+		private EntitySet<DoctorsAndSpeciality> _DoctorsAndSpecialities;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnSpecialityNameChanging(string value);
+    partial void OnSpecialityNameChanged();
+    partial void OnIsDeletedChanging(bool value);
+    partial void OnIsDeletedChanged();
+    #endregion
+		
+		public Speciality()
+		{
+			this._DoctorsAndSpecialities = new EntitySet<DoctorsAndSpeciality>(new Action<DoctorsAndSpeciality>(this.attach_DoctorsAndSpecialities), new Action<DoctorsAndSpeciality>(this.detach_DoctorsAndSpecialities));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialityName", DbType="NChar(32) NOT NULL", CanBeNull=false)]
+		public string SpecialityName
+		{
+			get
+			{
+				return this._SpecialityName;
+			}
+			set
+			{
+				if ((this._SpecialityName != value))
+				{
+					this.OnSpecialityNameChanging(value);
+					this.SendPropertyChanging();
+					this._SpecialityName = value;
+					this.SendPropertyChanged("SpecialityName");
+					this.OnSpecialityNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDeleted", DbType="Bit NOT NULL")]
+		public bool IsDeleted
+		{
+			get
+			{
+				return this._IsDeleted;
+			}
+			set
+			{
+				if ((this._IsDeleted != value))
+				{
+					this.OnIsDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._IsDeleted = value;
+					this.SendPropertyChanged("IsDeleted");
+					this.OnIsDeletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Speciality_DoctorsAndSpeciality", Storage="_DoctorsAndSpecialities", ThisKey="ID", OtherKey="SpecialityID")]
+		public EntitySet<DoctorsAndSpeciality> DoctorsAndSpecialities
+		{
+			get
+			{
+				return this._DoctorsAndSpecialities;
+			}
+			set
+			{
+				this._DoctorsAndSpecialities.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_DoctorsAndSpecialities(DoctorsAndSpeciality entity)
+		{
+			this.SendPropertyChanging();
+			entity.Speciality = this;
+		}
+		
+		private void detach_DoctorsAndSpecialities(DoctorsAndSpeciality entity)
 		{
 			this.SendPropertyChanging();
 			entity.Speciality = null;

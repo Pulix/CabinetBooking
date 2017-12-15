@@ -105,14 +105,6 @@
     <Content Include="fonts\lato-regular-webfont.ttf" />
     <Content Include="fonts\lato-regular-webfont.woff" />
     <Content Include="fonts\lato-regular-webfont.woff2" />
-    <Content Include="CabinetBooking.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>CabinetBooking.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="CabinetBooking.dbml.layout">
-      <DependentUpon>CabinetBooking.dbml</DependentUpon>
-    </None>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -192,6 +184,14 @@
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="CabinetBooking.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CabinetBooking.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="CabinetBooking.dbml.layout">
+      <DependentUpon>CabinetBooking.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="Resources\AdminLTE\css\adminlte.css.map" />
     <Content Include="Resources\AdminLTE\css\adminlte.min.css.map" />

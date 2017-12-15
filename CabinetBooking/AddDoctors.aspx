@@ -22,11 +22,11 @@
 				</div>
 				<div class="form-group">
 					<label for="txtPassword">Password</label>
-					<input type="password" placeholder="password" id="txtPassword" class="form-control" runat="server" />
+					<input type="password" placeholder="Password" id="txtPassword" class="form-control" runat="server" />
 				</div>
 				<div class="form-group">
 					<label for="txtPassword2">Repeat Password</label>
-					<input type="password" placeholder="password" id="txtPassword2" class="form-control" runat="server" />
+					<input type="password" placeholder="Repeat Password" id="txtPassword2" class="form-control" runat="server" />
 				</div>
 				<div class="row center-block" style="padding-top: 30px; padding-bottom: 10px;">
 					<asp:Button ID="addDoctor" runat="server" Text="Add Doctor" OnClick="addDoctor_Click" />

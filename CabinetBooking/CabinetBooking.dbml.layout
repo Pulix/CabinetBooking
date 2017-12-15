@@ -1,1 +1,64 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 8.5" name="CabinetBooking">
+  <DataContextMoniker Name="/CabinetBookingDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c03af72c-0f89-4101-94e5-656ceb0b1c7f" absoluteBounds="6.25, 0.875, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/CabinetBookingDataContext/Appointment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e92b6808-9a77-4ff7-b9d7-a4aa608d7ccc" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18f0c00e-d4a0-40b7-9854-b169c047e14c" absoluteBounds="9.125, 3.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/CabinetBookingDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4c07270-fde0-4cc0-8618-0a1405243496" absoluteBounds="9.14, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="850d9a25-34bb-4a6a-99d0-5714efea9933" absoluteBounds="0.75, 3.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/CabinetBookingDataContext/Doctor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22550e29-955d-4233-9c44-83651c5cba0b" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c60ffb39-a1d3-42fb-b99f-fd6b704b4545" absoluteBounds="3.5, 1, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/CabinetBookingDataContext/DoctorsAndSpeciality" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80728464-c741-4019-9e57-cb89f59f6114" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1cb36f8d-def5-487c-9845-dfa3c0c13c18" absoluteBounds="4.875, 4, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CabinetBookingDataContext/Speciality" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec46feb1-5e78-49ed-aed1-31513342d4e9" absoluteBounds="4.89, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.125 : 3.875); (10.125 : 1.76044840494792); (8.25 : 1.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CabinetBookingDataContext/User/User_Appointment" />
+      <nodes>
+        <classShapeMoniker Id="18f0c00e-d4a0-40b7-9854-b169c047e14c" />
+        <classShapeMoniker Id="c03af72c-0f89-4101-94e5-656ceb0b1c7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.78929768880208); (6.25 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CabinetBookingDataContext/DoctorsAndSpeciality/DoctorsAndSpeciality_Appointment" />
+      <nodes>
+        <classShapeMoniker Id="c60ffb39-a1d3-42fb-b99f-fd6b704b4545" />
+        <classShapeMoniker Id="c03af72c-0f89-4101-94e5-656ceb0b1c7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.875); (1.75 : 1.78929768880208); (3.5 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CabinetBookingDataContext/Doctor/Doctor_DoctorsAndSpeciality" />
+      <nodes>
+        <classShapeMoniker Id="850d9a25-34bb-4a6a-99d0-5714efea9933" />
+        <classShapeMoniker Id="c60ffb39-a1d3-42fb-b99f-fd6b704b4545" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.1875 : 4); (5.1875 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CabinetBookingDataContext/Speciality/Speciality_DoctorsAndSpeciality" />
+      <nodes>
+        <classShapeMoniker Id="1cb36f8d-def5-487c-9845-dfa3c0c13c18" />
+        <classShapeMoniker Id="c60ffb39-a1d3-42fb-b99f-fd6b704b4545" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
