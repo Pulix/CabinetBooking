@@ -26,45 +26,95 @@ namespace CabinetBooking
 			{
 				Response.Redirect("Index.aspx");
 			}
+
+			if (Session["Error"] != null)
+			{
+				lblMessage.Text = Session["Error"].ToString();
+				Session["Error"] = null;
+			}
+
+			if (Session["DoctorsMessage"] != null)
+			{
+				lblMessage.Text = Session["DoctorsMessage"].ToString();
+				Session["DoctorsMessage"] = null;
+			}
 		}
 
 		protected void addDoctor_Click(object sender, EventArgs e)
 		{
-
 			string firstName = txtDoctorName .Value.ToString();
 			string lastName = txtDoctorLastName.Value.ToString();
-			string username = validateUsername(txtDoctorName.Value.ToString()); //txtUsername.Value.ToString();
-			string password = validatePassword(txtPassword.Value.ToString(), txtPassword2.Value.ToString());
+			validateFirstAndLastName(firstName, lastName);
+			string username = validateUsername(txtDoctorName.Value.ToString());
+			string pin = validatePin(txtPassword.Value.ToString(), txtPassword2.Value.ToString());
 
-			if (password == "")
+			if (username == "ErrorAlreadyExist")
 			{
-				password = "123";
+				Session["Error"] = "Doctor's Username Already Exists";
+				Response.Redirect("AddDoctors.aspx");
 			}
 
+			if (pin == "N0tMatch")
+			{
+				Session["Error"] = "Pin Does Not Match";
+				Response.Redirect("AddDoctors.aspx");
+			}
+			else
+			{
+				if (pin == "n0Length")
+				{
+					Session["Error"] = "Pin number must be of 4 digits";
+					Response.Redirect("AddDoctors.aspx");
+				}
+			}
 
-			User newDoctor = new User();
+			Doctor newDoctor = new Doctor();
 			newDoctor.FirstName = firstName;
 			newDoctor.LastName = lastName;
-			newDoctor.Username = username;
-			newDoctor.Password = password;
-			newDoctor.Type = 2;
-			_dc.Users.InsertOnSubmit(newDoctor);
+			newDoctor.UserName = username;
+			newDoctor.Pin = pin;
+			_dc.Doctors.InsertOnSubmit(newDoctor);
 			_dc.SubmitChanges();
+
+			Session["DoctorsMessage"] = "Doctor '" + firstName + " " + lastName + "' added Succesfully";
+			Response.Redirect("AddDoctors.aspx");
+		}
+
+		private void validateFirstAndLastName(string firstName, string lastName)
+		{
+			Doctor doc = _dc.Doctors.FirstOrDefault(d => d.FirstName == firstName && d.LastName == lastName);
+			if (doc != null)
+			{
+				Session["Error"] = "Doctor '"+ firstName + " " + lastName + "' Already Exists";
+				Response.Redirect("AddDoctors.aspx");
+			}
 		}
 
 		private string validateUsername(string userName)
 		{
-			return userName;
-		}
+			Doctor doc = _dc.Doctors.FirstOrDefault(d => d.UserName == userName);
 
-		private string validatePassword(string password1, string password2)
-		{
-			if (password1 == password2)
+			if (doc == null)
 			{
-				return password1;
+				return userName;
 			}
 
-			return "";
+			return "ErrorAlreadyExist";
+		}
+
+		private string validatePin(string password1, string password2)
+		{
+			if (password1 != password2)
+			{
+				return "N0tMatch";
+			}
+
+			if (password1.Length != 4)
+			{
+				return "n0Length";
+			}
+
+			return password1;
 
 		}
 	}
