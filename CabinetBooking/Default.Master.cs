@@ -38,7 +38,6 @@ namespace CabinetBooking
 						{
 						btnAddDoctors.Visible = true;
 						btnAddSpecialities.Visible = true;
-						btnSetDoctorSpeciality.Visible = true;
 						btnStatistics.Visible = true;
 						}
 				}

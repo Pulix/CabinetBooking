@@ -17,8 +17,24 @@
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
 	<style type="text/css">
 		.custombutton {
+			margin-top: 15px;
 			display: block;
 		}
+
+		.custombuttonASD {
+			margin-top: 14px;
+			margin-left: 10px;
+			display: block;
+		}
+
+		/*.customfooter {
+			/*position: absolute;*/
+			bottom: 0;
+			/*width: 100%;*/
+			/*height: 60px;*/ /* Set the fixed height of the footer here 
+			line-height: 60px;  Vertically center the text there 
+			background-color: #f5f5f5;
+		}*/*/
 	</style>
 </head>
 <body id="body" runat="server">
@@ -46,74 +62,28 @@
 		<li><a href="Appointments.aspx">Appointments</a></li>
 		<li><a id="btnAddDoctors" href="AddDoctors.aspx" runat="server" visible="false">Add doctors</a></li>
 		<li><a id="btnAddSpecialities" href="AddSpecialities.aspx" runat="server" visible="false">Add specialities</a></li>
-		<li><a id="btnSetDoctorSpeciality" runat="server" visible="false" href="SetDoctorSpeciality.aspx">Set doctor speciality</a></li>
 		<li><a id="btnStatistics" runat="server" visible="false" href="Statistics.aspx">Statistics</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
 		<li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
 		<li><a id="btnSignUp" href="Register.aspx" runat="server" visible="false"> Sign Up</a></li>
-		<li><asp:Label ID="lblUsername" runat="server"  ></asp:Label></li>
+		<li><asp:Label ID="lblUsername" runat="server"  CssClass="custombutton" ></asp:Label></li>
 		<li><asp:Button Id="btnLogOut" runat="server" visible="false" Text="Log Out" BackColor="#339966" ForeColor="#46464d"
-			 BorderStyle="None" CssClass="custombutton" OnClick="btnLogOut_Click"></asp:Button></li>
+			 BorderStyle="None" CssClass="custombuttonASD" OnClick="btnLogOut_Click"></asp:Button></li>
     </ul>
     </div>
     </div>   
     </nav>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<asp:ContentPlaceHolder ID="BodyContent" runat="server">
 
-
-		<%--<!-- Modal -->
-		<div id="myModal" class="modal fade in" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal Content -->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">
-							&times</button>
-						<h4 class="modal-title">Sign-In</h4>
-					</div>
-					<div class="modal-body">
-						<div role="form">
-							<div class="form-group">
-								<asp:Label ID="lblUserName" runat="server" Text="UserName"></asp:Label>
-								<asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
-							</div>
-							<div class="form-group">
-								<asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-								<asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
-							</div>
-							<hr class="divider">
-							<div class="form-group">
-								<div class="row">
-									<div class="col-sm-6">
-                                        <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
-										<asp:CheckBox ID="chkRemberMe" runat="server" Text="Remember Me" CssClass="checkbox-inline" />
-										|
-                                    <asp:LinkButton ID="ForgotPassButton" runat="server" CssClass="text-primary">Forgot Password ?</asp:LinkButton>
-                                        |
-                                    <asp:LinkButton ID="RegisterButton" runat="server" CssClass="text-primary">Register</asp:LinkButton>
-									</div>
-									<div class="col-sm-6">
-										<span class="pull-right">
-											<asp:Button ID="btnLogIn" CssClass="btn btn-success" runat="server" Text="Log In" /></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+						<%--DO NOT Insert Content Here--%>
+					</asp:ContentPlaceHolder>
 				</div>
 			</div>
-		</div>--%>
-
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<asp:ContentPlaceHolder ID="BodyContent" runat="server">
-
-					<%--DO NOT Insert Content Here--%>
-				</asp:ContentPlaceHolder>
-			</div>
-		</div>
 		<!-- footer -->
-		<footer id="footer">
+		<footer id="footer" >
 		<!-- footer-widget-wrapper -->
 		<div class="footer-widget-wrapper">
 			<div class="container">
@@ -169,14 +139,15 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">				
-					<div class="row">  <%--"col-sm-6"--%>
-						<div class="copy-right text-right">
+					<div class="row">  
+						<div class="copy-right text-left">
 							<p>&copy; Copyright <strong>Hawkings</strong> </p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div><!-- footer-bottom -->
+		</div>
+		<!-- footer-bottom -->
 	</footer>
 		<!--/#footer-->
 		<!-- Script -->

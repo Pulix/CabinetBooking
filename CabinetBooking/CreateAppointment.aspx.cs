@@ -20,6 +20,10 @@ namespace CabinetBooking
 
 				if (user.Type == 1) { Response.Redirect("Index.aspx"); }
 			}
+			else
+			{
+				Response.Redirect("Index.aspx");
+			}
 
 
 			if (!IsPostBack)
@@ -61,12 +65,19 @@ namespace CabinetBooking
 
 		protected void tbtnCreateAppointment_Click(object sender, EventArgs e)
 		{
-			string selectedDateTime = txtAppointmentDateTime.Value.ToString();
+			string selectedDateTime = txtAppointmentDateTime.Value.Trim().ToString();
+
+			if (ddlDoctors.SelectedValue.Trim().ToString().Length < 1 || ddlSpecialities.SelectedValue.Trim().ToString().Length < 1)
+			{
+				Session["Message"] = "Doctor and Speciality are required";
+				Response.Redirect("CreateAppointment.aspx");
+			}
 
 			Doctor doctor = _dc.Doctors.FirstOrDefault(dc => dc.FirstName + " " + dc.LastName == ddlDoctors.SelectedValue.Trim().ToString());
 			Speciality speciality = _dc.Specialities.FirstOrDefault(s => s.SpecialityName == ddlSpecialities.SelectedValue.Trim().ToString());
 
 			DoctorsAndSpeciality docAndSpec = _dc.DoctorsAndSpecialities.FirstOrDefault(ds => ds.DoctorsID == doctor.ID && ds.SpecialityID == speciality.ID);
+
 
 			List<Appointment> appointmentsList = _dc.Appointments.Where(a => a.DoctorAndSpecialityID == docAndSpec.ID).ToList();
 
@@ -93,8 +104,18 @@ namespace CabinetBooking
 			newAppointment.UserID = Int32.Parse(Session["LoggedUserID"].ToString());
 			newAppointment.DoctorAndSpecialityID = docAndSpec.ID;
 			newAppointment.AppointmentDate = myDate;
-			_dc.Appointments.InsertOnSubmit(newAppointment);
-			_dc.SubmitChanges();
+			
+
+			try
+			{
+				_dc.Appointments.InsertOnSubmit(newAppointment);
+				_dc.SubmitChanges();
+			}
+			catch (Exception err)
+			{
+				Session["Message"] = err.Message.ToString();
+				Response.Redirect("CreateAppointment.aspx");
+			}
 
 
 			Session["Message"] = "Success !";

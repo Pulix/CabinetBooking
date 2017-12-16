@@ -13,9 +13,17 @@ namespace CabinetBooking
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+
+
 			if (Session["LoggedUserID"] != null)
 			{
 				User user = _dc.Users.FirstOrDefault(u => u.ID == Convert.ToInt32(Session["LoggedUserID"].ToString()));
+
+				if (Session["Message"] != null)
+				{
+					lblMessage.Text = Session["Message"].ToString();
+					Session["Message"] = null;
+				}
 
 				if (user.Type != 1)
 				{
@@ -30,10 +38,10 @@ namespace CabinetBooking
 					foreach (Appointment userAppointment in userAppointmentsList)
 					{
 
-						Button btnDelete = new Button() { ID = userAppointment.ID.ToString()+"D", Text = "Delete" };
+						Button btnDelete = new Button() { ID = userAppointment.ID.ToString()+"D", Text = "Delete", CssClass= "btn btn-danger" };
 						btnDelete.Click += buttonDelete_Click;
 
-						Button btnEdit = new Button() { ID = userAppointment.ID.ToString()+"E", Text = "Edit" };
+						Button btnEdit = new Button() { ID = userAppointment.ID.ToString()+"E", Text = "Edit", CssClass = "btn btn-warning" };
 						btnEdit.Click += buttonEdit_Click;
 
 						TableRow row = new TableRow();
@@ -94,10 +102,10 @@ namespace CabinetBooking
 					foreach (Appointment userAppointment in userAppointmentsList)
 					{
 
-						Button btnDelete = new Button() { ID = userAppointment.ID.ToString() + "D", Text = "Delete" };
+						Button btnDelete = new Button() { ID = userAppointment.ID.ToString() + "D", Text = "Delete", CssClass = "btn btn-danger" };
 						btnDelete.Click += buttonDelete_Click;
 
-						Button btnEdit = new Button() { ID = userAppointment.ID.ToString() + "E", Text = "Edit" };
+						Button btnEdit = new Button() { ID = userAppointment.ID.ToString() + "E", Text = "Edit", CssClass = "btn btn-warning" };
 						btnEdit.Click += buttonEdit_Click;
 
 						TableRow row = new TableRow();
