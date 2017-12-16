@@ -14,7 +14,7 @@ appointment (an appointment cannot be cancelled if there is less than one day â€
 
 - [x] As an administrator I want to be able to add doctors and specialities
 
-- [ ] As an administrator I want to be able to see, modify and delete all the appointments (one cannot delete current and
+- [x] As an administrator I want to be able to see, modify and delete all the appointments (one cannot delete current and
 future appointments)
 
 - [ ] As an administrator I want to be able to see statistic reports about appointments made
