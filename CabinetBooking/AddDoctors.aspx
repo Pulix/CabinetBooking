@@ -14,7 +14,7 @@
 				</div>
 				<div class="form-group">
 					<label for="txtDoctorLastName">Doctor's Last Name</label>
-					<input type="text" placeholder="Doctor's Last Name" class="form-control" id="txtDoctorLastName" runat="server" />
+					<input req type="text" placeholder="Doctor's Last Name" class="form-control" id="txtDoctorLastName" runat="server" />
 				</div>
 				<div class="form-group">
 					<label for="txtDoctorUserName">Doctor's Username</label>

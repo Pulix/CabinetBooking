@@ -83,6 +83,7 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="AddDoctors.aspx" />
     <Content Include="Doctors.aspx" />
+    <Content Include="EditAppointment.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Default.Master" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -727,6 +728,8 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="SetDoctorSpeciality.aspx" />
+    <Content Include="Statistics.aspx" />
     <Content Include="Web.config" />
     <Content Include="Register.aspx" />
   </ItemGroup>
@@ -771,6 +774,13 @@
     <Compile Include="Doctors.aspx.designer.cs">
       <DependentUpon>Doctors.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditAppointment.aspx.cs">
+      <DependentUpon>EditAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAppointment.aspx.designer.cs">
+      <DependentUpon>EditAppointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\CNPvalidator.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -807,6 +817,20 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SetDoctorSpeciality.aspx.cs">
+      <DependentUpon>SetDoctorSpeciality.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SetDoctorSpeciality.aspx.designer.cs">
+      <DependentUpon>SetDoctorSpeciality.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics.aspx.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics.aspx.designer.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -10,34 +10,25 @@
 namespace CabinetBooking {
     
     
-    public partial class LogIn {
+    public partial class SetDoctorSpeciality {
         
         /// <summary>
-        /// txtUsername control.
+        /// ddlDoctors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUsername;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDoctors;
         
         /// <summary>
-        /// txtPassword control.
+        /// ddlSpecialities control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPassword;
-        
-        /// <summary>
-        /// doctorsLogIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox doctorsLogIn;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSpecialities;
         
         /// <summary>
         /// lblMessage control.
@@ -49,12 +40,12 @@ namespace CabinetBooking {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// btnLogIn control.
+        /// btnRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogIn;
+        protected global::System.Web.UI.WebControls.Button btnRegister;
     }
 }

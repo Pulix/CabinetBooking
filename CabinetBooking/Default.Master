@@ -15,8 +15,13 @@
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
 		rel="stylesheet" type="text/css" />
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+		.custombutton {
+			display: block;
+		}
+	</style>
 </head>
-<body>
+<body id="body" runat="server">
 	<form id="form1" runat="server">
 		<div class="container">
 			<div id="logo">
@@ -36,18 +41,20 @@
     </div>
     <div class="collapse navbar-collapse" id="myNav">
     <ul class="nav navbar-nav">
-		<li class="active"><a href="Index.aspx">Home</a></li>
+		<li><a href="Index.aspx">Home</a></li>
 		<li><a href="Doctors.aspx">Doctors</a></li>
-		<li><a href="Appointments.aspx">Appointments</a></li
+		<li><a href="Appointments.aspx">Appointments</a></li>
 		<li><a id="btnAddDoctors" href="AddDoctors.aspx" runat="server" visible="false">Add doctors</a></li>
 		<li><a id="btnAddSpecialities" href="AddSpecialities.aspx" runat="server" visible="false">Add specialities</a></li>
+		<li><a id="btnSetDoctorSpeciality" runat="server" visible="false" href="SetDoctorSpeciality.aspx">Set doctor speciality</a></li>
+		<li><a id="btnStatistics" runat="server" visible="false" href="Statistics.aspx">Statistics</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
 		<li><a id="btnLogIn" href="LogIn.aspx" runat="server" visible="false"> Log In</a></li>
 		<li><a id="btnSignUp" href="Register.aspx" runat="server" visible="false"> Sign Up</a></li>
-		<li><asp:Label ID="lblUsername" runat="server" Font-Bold="true" ></asp:Label></li>
+		<li><asp:Label ID="lblUsername" runat="server"  ></asp:Label></li>
 		<li><asp:Button Id="btnLogOut" runat="server" visible="false" Text="Log Out" BackColor="#339966" ForeColor="#46464d"
-			 BorderStyle="None" OnClick="btnLogOut_Click"></asp:Button></li>
+			 BorderStyle="None" CssClass="custombutton" OnClick="btnLogOut_Click"></asp:Button></li>
     </ul>
     </div>
     </div>   

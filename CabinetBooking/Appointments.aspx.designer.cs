@@ -13,6 +13,15 @@ namespace CabinetBooking {
     public partial class Appointments {
         
         /// <summary>
+        /// appointments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl appointments;
+        
+        /// <summary>
         /// AppointmentsTable control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,14 @@ namespace CabinetBooking {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table AppointmentsTable;
+        
+        /// <summary>
+        /// btnCreateAppointment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnCreateAppointment;
     }
 }

@@ -10,34 +10,34 @@
 namespace CabinetBooking {
     
     
-    public partial class LogIn {
+    public partial class EditAppointment {
         
         /// <summary>
-        /// txtUsername control.
+        /// lblDoctorsName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUsername;
+        protected global::System.Web.UI.WebControls.Label lblDoctorsName;
         
         /// <summary>
-        /// txtPassword control.
+        /// lblDoctorSpeciality control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPassword;
+        protected global::System.Web.UI.WebControls.Label lblDoctorSpeciality;
         
         /// <summary>
-        /// doctorsLogIn control.
+        /// txtAppointmentDateTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox doctorsLogIn;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAppointmentDateTime;
         
         /// <summary>
         /// lblMessage control.
@@ -49,12 +49,12 @@ namespace CabinetBooking {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// btnLogIn control.
+        /// tbtnCreateAppointment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogIn;
+        protected global::System.Web.UI.WebControls.Button tbtnCreateAppointment;
     }
 }

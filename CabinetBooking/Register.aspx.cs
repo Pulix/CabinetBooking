@@ -33,7 +33,7 @@ namespace CabinetBooking
 
 			if (firstName.Length < 1 || lastName.Length < 1)
 			{
-				Session["Error"] = "Please provide Username or Password";
+				Session["Error"] = "Please provide First Name and Last Name";
 				Response.Redirect("Register.aspx");
 			}
 
@@ -51,7 +51,9 @@ namespace CabinetBooking
 			newUser.Type = 3;
 			_dc.Users.InsertOnSubmit(newUser);
 			_dc.SubmitChanges();
-			lblMessage.Text = "Registration succesful!";
+
+			Session["Message"] = "User "+ username + " Registered succesfull";
+			Response.Redirect("LogIn.aspx");
 		}
 
 		private string validateUsername(string userName)
@@ -79,6 +81,12 @@ namespace CabinetBooking
 
 		private string validatePassword(string password1, string password2)
 		{
+			if (password1.Length < 4)
+			{
+				Session["Error"] = "Password must be at least 4 characters long";
+				Response.Redirect("LogIn.aspx");
+			}
+
 			if (password1 == password2)
 			{
 				string hash = "";

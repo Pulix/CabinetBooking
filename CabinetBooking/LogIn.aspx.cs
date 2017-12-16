@@ -22,6 +22,12 @@ namespace CabinetBooking
 				Session["Error"] = null;
 			}
 
+			if (Session["Message"] != null)
+			{
+				lblMessage.Text = Session["Message"].ToString();
+				Session["Message"] = null;
+			}
+
 			txtPassword.Visible = true;
 			txtUsername.Visible = true;
 			btnLogIn.Visible = true;
@@ -34,37 +40,54 @@ namespace CabinetBooking
 			string username = txtUsername.Value.ToLower().Trim();
 			string password = getPasswordHash(txtPassword.Value);
 
-			User user = _dc.Users.FirstOrDefault(u => u.Username.ToLower() == username && u.Password == password);
-
-			if (user == null)
+			if (doctorsLogIn.Checked == false)
 			{
-				Session["Error"] = "Invalid Username or Password";
-				Response.Redirect("LogIn.aspx");
+				//User Login
+
+				User user = _dc.Users.FirstOrDefault(u => u.Username.ToLower() == username && u.Password == password);
+
+				if (user == null)
+				{
+					Session["Error"] = "Invalid Username or Password";
+					Response.Redirect("LogIn.aspx");
+				}
+				else
+				{
+					Session["LoggedUserID"] = user.ID.ToString();
+					Server.Transfer("Index.aspx");
+				}
+
+				if (user != null)
+				{
+					txtPassword.Visible = false;
+					txtUsername.Visible = false;
+					btnLogIn.Visible = false;
+				}
+				else
+				{
+					txtPassword.Visible = true;
+					txtUsername.Visible = true;
+					btnLogIn.Visible = true;
+					lblMessage.Visible = true;
+					lblMessage.ForeColor = Color.Red;
+					lblMessage.Text = " Worng username or password";
+				}
 			}
 			else
 			{
-				Session["LoggedUserID"] = user.ID.ToString();
-				Server.Transfer("Index.aspx");
-			}
+				//Doctor Login
+				Doctor doctor = _dc.Doctors.FirstOrDefault(u => u.UserName.ToLower() == username && u.Pin == txtPassword.Value);
 
-
-
-			if (user != null)
-			{
-				txtPassword.Visible = false;
-				txtUsername.Visible = false;
-				btnLogIn.Visible = false;
-				lblMessage.Style.Add("font-weight", "bold");
-				
-			}
-			else
-			{
-				txtPassword.Visible = true;
-				txtUsername.Visible = true;
-				btnLogIn.Visible = true;
-				lblMessage.Visible = true;
-				lblMessage.ForeColor = Color.Red;
-				lblMessage.Text = " Worng username or password";
+				if (doctor == null)
+				{
+					Session["Error"] = "Invalid Username or Password";
+					Response.Redirect("LogIn.aspx");
+				}
+				else
+				{
+					Session["IsDoctor"] = true;
+					Server.Transfer("Index.aspx");
+				}
 			}
 		}
 
@@ -96,6 +119,5 @@ namespace CabinetBooking
 			// Return the hexadecimal string.
 			return sBuilder.ToString();
 		}
-
 	}
 }

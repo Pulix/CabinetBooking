@@ -45,7 +45,7 @@ namespace CabinetBooking
 			string firstName = txtDoctorName .Value.ToString();
 			string lastName = txtDoctorLastName.Value.ToString();
 			validateFirstAndLastName(firstName, lastName);
-			string username = validateUsername(txtDoctorName.Value.ToString());
+			string username = validateUsername(txtDoctorUserName.Value.ToString());
 			string pin = validatePin(txtPassword.Value.ToString(), txtPassword2.Value.ToString());
 
 			if (username == "ErrorAlreadyExist")
@@ -82,6 +82,12 @@ namespace CabinetBooking
 
 		private void validateFirstAndLastName(string firstName, string lastName)
 		{
+			if (firstName.Length < 1 || lastName.Length < 1)
+			{
+				Session["Error"] = "First name and Last name required";
+				Response.Redirect("AddDoctors.aspx");
+			}
+
 			Doctor doc = _dc.Doctors.FirstOrDefault(d => d.FirstName == firstName && d.LastName == lastName);
 			if (doc != null)
 			{
@@ -92,6 +98,12 @@ namespace CabinetBooking
 
 		private string validateUsername(string userName)
 		{
+			if (userName.Length < 1)
+			{
+				Session["Error"] = "Username required";
+				Response.Redirect("AddDoctors.aspx");
+			}
+
 			Doctor doc = _dc.Doctors.FirstOrDefault(d => d.UserName == userName);
 
 			if (doc == null)

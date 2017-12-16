@@ -38,6 +38,13 @@ namespace CabinetBooking
 		{
 			string specialityName = txtSpecialityName.Value.ToString();
 
+			if (specialityName.Length < 3)
+			{
+				Session["SpecialityMessage"] = "Speciality Name must be at least 3 characters long";
+				Response.Redirect("AddSpecialities.aspx");
+
+			}
+
 			Speciality spec = _dc.Specialities.FirstOrDefault(s => s.SpecialityName == specialityName);
 
 			if (spec == null)
